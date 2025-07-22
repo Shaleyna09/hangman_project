@@ -1,4 +1,6 @@
 import random
+
+
 def get_random_word():
     with open('wordlist.txt', 'r') as file:
         text = file.read()
