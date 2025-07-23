@@ -7,3 +7,4 @@ def get_random_word():
     words = text.split()
     random_word = random.choice(words)
     print(random_word)
+get_random_word()
