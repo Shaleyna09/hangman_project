@@ -17,14 +17,13 @@ while True:
     elif previous_inputs.add(Kartoffel):
         print(f"You guessed: {previous_inputs}")
     
-    else:
-        previous_inputs.add(Kartoffel)
+    elif previous_inputs.add(Kartoffel):
         print(f"You entered: {Kartoffel}")
         print(f"You guessed: {previous_inputs}")
     
-    if game.is_won():
-        print(f"You won! The word was: {game.word}")
-        break
+    elif game.is_won():
+       print(f"You won! The word was: {game.word}")
+       break
     elif game.is_lost():
         print(f"You lost! The word was: {game.word}")
         break
