@@ -20,20 +20,13 @@ class HangmanGame:
             self.errors += 1
             return False
     
-    def is_won(self):
-        return all(letter in self.guessed_letters for letter in self._word)
-    
-    def is_lost(self):
-        tries_left = self.max_errors - self.errors
-        print(f"You have {tries_left} tries left.")
-    
     def display_progress(self):
         return ' '.join([letter if letter in self.guessed_letters else '_' for letter in self.__word])
 
     def guess(self, letter):
         if letter in self.guessed_letters:
             print("You've already guessed that letter.")
-        elif letter in self.__word:
+        elif letter in self.word:
             self.guessed_letters.add(letter)
             print("Correct guess")
         else:
@@ -43,3 +36,8 @@ class HangmanGame:
 
         print(self.display_progress())
         print(f"Errors: {self.error}/{self.max_error}")
+    def is_won(self):
+            return all(letter in self.guessed_letters for letter in self._word)
+        
+    def is_lost(self):
+        return self.errors >= self.max_errors
