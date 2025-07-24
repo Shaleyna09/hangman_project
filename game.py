@@ -41,9 +41,10 @@ class HangmanGame:
             print("Wrong guess")
 
         print(self.display_progress())
-        print(f"Errors: {self.error}/{self.max_error}")
+        print(f"Errors: {self.errors}/{self.max_errors}")
+    
     def is_won(self):
-            return all(letter in self.guessed_letters for letter in self._word)
+            return all(letter in self.guessed_letters for letter in self.word)
         
     def is_lost(self):
         return self.errors >= self.max_errors
