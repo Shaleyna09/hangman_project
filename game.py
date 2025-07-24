@@ -31,9 +31,7 @@ class HangmanGame:
         return ' '.join([letter if letter in self.guessed_letters else '_' for letter in self.__word])
 
     def guess(self, letter):
-        if letter in self.guessed_letters:
-            print("You've already guessed that letter.")
-        elif self.guessed_letters.add(letter):
+        if self.guessed_letters.add(letter):
             print("Correct guess")
         else:
             self.guessed_letters.add(letter)
