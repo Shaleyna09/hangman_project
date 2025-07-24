@@ -36,4 +36,4 @@ class HangmanGame:
                 display += char + " "
             else:
                 display += "_ "
-        return display.strip()
+        print(display.strip())
