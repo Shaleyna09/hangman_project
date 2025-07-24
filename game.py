@@ -28,12 +28,18 @@ class HangmanGame:
         print(f"You have {tries_left} tries left.")
     
     def display_progress(self):
-        display = ""
-        for char in self.word:
-            if not char.isalpha():
-                display += char + " "
-            elif char in self.guessed_letters:
-                display += char + " "
-            else:
-                display += "_ "
-        print(display.strip())
+        return ' '.join([letter if letter in self.guessed_letters else '_' for letter in self.__word])
+
+    def guess(self, letter):
+        if letter in self.guessed_letters:
+            print("You've already guessed that letter.")
+        elif letter in self.__word:
+            self.guessed_letters.add(letter)
+            print("Correct guess")
+        else:
+            self.guessed_letters.add(letter)
+            self.error += 1
+            print("Wrong guess")
+
+        print(self.display_progress())
+        print(f"Errors: {self.error}/{self.max_error}")
