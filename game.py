@@ -1,7 +1,9 @@
+from utils import get_random_word
+
 class HangmanGame:
-    def __init__(self, word, guessed_letters, max_errors, errors):
-        self.word = word
-        self.guessed_letters = guessed_letters
+    def __init__(self, word=None, guessed_letters=None, max_errors=6, errors=0):
+        self.__word = word or get_random_word()
+        self.guessed_letters = guessed_letters or set()
         self.max_errors = max_errors
         self.errors = errors
    
