@@ -1,5 +1,5 @@
 from game import HangmanGame
-game = HangmanGame(word="example", guessed_letters=set(), max_errors=6, errors=0)
+game = HangmanGame
 ze_word =  set()
 while True:
     Kartoffel = input("Enter a letter: ")
@@ -18,7 +18,7 @@ while True:
         print(f"You guessed: {ze_word}")
     else: 
         ze_word.add(Kartoffel)
-        game.guess('ze_word')
+        game.guess(Kartoffel)
 
     if game.is_won():
         print(f"You won! The word was: {game.word}")
