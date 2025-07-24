@@ -18,7 +18,7 @@ while True:
         print(f"You guessed: {ze_word}")
     else: 
         ze_word.add(Kartoffel)
-        game.guess(ze_word)
+        game.guess('ze_word')
 
     if game.is_won():
         print(f"You won! The word was: {game.word}")

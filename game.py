@@ -11,6 +11,13 @@ class HangmanGame:
                 print(letter, end=' ')
             else:
                 print('_', end=' ')
+    @property
+    def word(self):
+        return self.__word
+
+    @word.setter
+    def word(self, value):
+        self.__word = value
     
     def process_guess(self, letter):
         if letter in self.word:
@@ -26,12 +33,11 @@ class HangmanGame:
     def guess(self, letter):
         if letter in self.guessed_letters:
             print("You've already guessed that letter.")
-        elif letter in self.word:
-            self.guessed_letters.add(letter)
+        elif self.guessed_letters.add(letter):
             print("Correct guess")
         else:
             self.guessed_letters.add(letter)
-            self.error += 1
+            self.errors += 1
             print("Wrong guess")
 
         print(self.display_progress())
